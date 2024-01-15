@@ -39,6 +39,16 @@ class Base:
             f.write(cls.to_json_string(list_objs))
 
     @classmethod
+    def load_from_file(cls):
+        '''Loads string from file and unjsonifies.'''
+        from os import path
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r", encoding="utf-8") as f:
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
+
+    @classmethod
     def create(cls, **dictionary):
         '''Loads instance from dictionary.'''
         from models.rectangle import Rectangle
@@ -51,13 +61,3 @@ class Base:
             new = None
         new.update(**dictionary)
         return new
-
-    @classmethod
-    def load_from_file(cls):
-        '''Loads string from file and unjsonifies.'''
-        from os import path
-        file = "{}.json".format(cls.__name__)
-        if not path.isfile(file):
-            return []
-        with open(file, "r", encoding="utf-8") as f:
-            return [cls.create(**d) for d in cls.from_json_string(f.read())]
