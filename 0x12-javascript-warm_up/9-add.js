@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//addition bitween two integers
+// addition bitween two integers
 
 const a = process.argv[2];
 const b = process.argv[3];
