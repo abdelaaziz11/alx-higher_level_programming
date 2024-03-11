@@ -3,11 +3,10 @@
 const x = process.argv[2];
 
 if (!isNaN(process.argv[2])) {
-  let i = 0, j = 0;
+  let i;
   for (i = 0; i < x; i++) {
-    for (j = 0; j < x; j++) {
-      console.log('X');
-    }
-    console.log('X');
+    console.log('X'.repeat(process.argv[2]));
   }
+} else {
+	console.log('Missing size');
 }
