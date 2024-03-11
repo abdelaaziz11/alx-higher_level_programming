@@ -8,5 +8,5 @@ if (!isNaN(process.argv[2])) {
     console.log('X'.repeat(process.argv[2]));
   }
 } else {
-	console.log('Missing size');
+  console.log('Missing size');
 }
