@@ -1,7 +1,9 @@
 #!/usr/bin/node
 // factorial
+
 const n = parseInt(process.argv[2]);
-function factorialize(num) {
+
+function factorialize (num) {
   if (isNaN(num)) {
     return 1;
   }
