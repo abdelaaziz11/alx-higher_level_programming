@@ -6,6 +6,7 @@ class Rectangle {
       [this.width, this.height] = [w, h];
     }
   }
+
   print () {
     let i = 0;
     while (i < this.height) {
