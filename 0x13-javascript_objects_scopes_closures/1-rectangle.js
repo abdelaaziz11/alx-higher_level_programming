@@ -2,11 +2,11 @@
 
 class Rectangle {
   // Rectangle calss
-  h;
-  w;
-  constructor(h, w) {
-    this.height = h;
+  //w;
+  //h;
+  constructor(w, h) {
     this.width = w;
+    this.height = h;
   }
 }
 module.exports = Rectangle;
