@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 // searches the second biggest integer
 
 if (!process.argv[2] || process.argv.lenght <= 3) {
