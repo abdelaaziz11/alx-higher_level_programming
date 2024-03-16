@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
 
-    cursor.execute(" SELECT * FROM states WHERE name LIKE 'N%' ")
+    cursor.execute(" SELECT MIN(id), name FROM states WHERE name\
+            LIKE 'N%' GROUP BY name")
 
     results = cursor.fetchall()
 
