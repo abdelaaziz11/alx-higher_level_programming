@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+''' lists all states from the database hbtn_0e_0_usa '''
+
 from sys import argv
 import MySQLdb
 
@@ -15,8 +17,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
 
-    query = "SELECT * FROM states"
-    cursor.execute(query)
+    '''query = "SELECT * FROM states" '''
+    cursor.execute(" SELECT * FROM states ")
 
     results = cursor.fetchall()
 
