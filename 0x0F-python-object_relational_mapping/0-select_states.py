@@ -11,13 +11,11 @@ if __name__ == "__main__":
             port=3306,
             user=argv[1],
             passwd=argv[2],
-            db=argv[3],
-            charset="utf8"
+            db=argv[3]
     )
 
     cursor = connection.cursor()
 
-    '''query = "SELECT * FROM states" '''
     cursor.execute(" SELECT * FROM states ")
 
     results = cursor.fetchall()
