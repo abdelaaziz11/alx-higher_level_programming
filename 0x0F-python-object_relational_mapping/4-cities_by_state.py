@@ -18,10 +18,11 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
 
-    cursor.execute(" SELECT * FROM cities ")
+    cursor.execute(" SELECT cities.id, cities.name, states.name\
+            FROM cities JOIN states ON cities.state_id = states.id\
+            ORDER BY cities.id ")
 
     results = cursor.fetchall()
-
     for row in results:
         print(row)
 
