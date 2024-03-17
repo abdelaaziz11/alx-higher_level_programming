@@ -20,7 +20,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
 
-    cursor.execute(" SELECT * FROM states WHERE BINARY name = '{}' ".format(argv[4]))
+    cursor.execute(" SELECT * FROM states\
+            WHERE BINARY name = '{}' ".format(argv[4]))
 
     results = cursor.fetchall()
 
