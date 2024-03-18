@@ -22,9 +22,5 @@ if __name__ == "__main__":
 
     results = cursor.fetchall()
 
-    """cities = [row[0] for row in results]
-    print(", ".join(cities))"""
-
     cities = list(map(lambda row: row[0], results))
     print(", ".join(cities))
-
