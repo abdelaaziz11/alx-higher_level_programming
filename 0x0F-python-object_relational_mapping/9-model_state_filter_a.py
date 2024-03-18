@@ -20,11 +20,13 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
+    # Ensure consistent indentation for the continuation line
     session = Session()
 
+    """states = session.query(State)\
+            .filter(State.name.ilike('%a%')).order_by(State.id).all()"""
     states = session.query(State).filter(State.name.ilike('%a%')) \
-            .order_by(State.id).all()
-
+                    .order_by(State.id).all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
 
