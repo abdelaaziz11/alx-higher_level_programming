@@ -21,10 +21,12 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State).filter(State.name == argv[4]) \
-            .one_or_none()
+    states = session.query(State) \
+                    .filter(State.name == sys.argv[4]).one_or_none()
+    """states = session.query(State) \
+            .filter(State.name == argv[4]).one_or_none()"""
     if states is None:
-        print("Nothing")
+        print("Not found")
     else:
         print(states.id)
     session.close()
