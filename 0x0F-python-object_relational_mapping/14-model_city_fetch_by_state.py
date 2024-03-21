@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
+
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         argv[1], argv[2], argv[3]),
@@ -16,7 +17,9 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    cities = session.query(State, City).join(City).order_by(City.id)
-    for state, city in cities:
+    cities = session.query(City, State).\
+        filter(City.state_id == State.id).all()
+
+    for city, state in cities:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
