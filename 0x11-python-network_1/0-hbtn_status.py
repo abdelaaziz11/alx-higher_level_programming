@@ -7,8 +7,9 @@ fetches https://alx-intranet.hbtn.io/status
 if __name__ == "__main__":
     import urllib.request
 
-    req = 'https://alx-intranet.hbtn.io/status'
-    with urllib.request.urlopen(req) as response:
+    req = urllib.request
+    with req.urlopen('https://alx-intranet.hbtn.io/status') as response:
+
         the_page = response.read()
         print("\t- type: {}".format(type(the_page)))
         print("\t- content: {}".format(the_page))
