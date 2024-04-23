@@ -15,7 +15,7 @@ request.get(urlFilms, (err, response, body) => {
 });
 
 const getChars = (index) => {
-  if (index === characters.lenght) {
+  if (index === characters.length) {
     return;
   }
 
