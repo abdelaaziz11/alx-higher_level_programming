@@ -10,7 +10,7 @@ request.get(urlFilms, (err, response, body) => {
   }
   const data = JSON.parse(body);
   const characters = data.characters;
-  for (character of characters) {
+  for (const character of characters) {
     request(character, (err, response, body) => {
       if (err) {
         console.error(err);
