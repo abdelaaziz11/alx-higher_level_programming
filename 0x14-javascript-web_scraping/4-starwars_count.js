@@ -13,7 +13,7 @@ request.get(urlAPI, (err, response, body) => {
   const data = JSON.parse(body);
 
   data.results.forEach((film) => {
-    film.characters.forEach((haracter) => {
+    film.characters.forEach((character) => {
       if (character.includes(IdWA)) {
         count += 1;
       }
